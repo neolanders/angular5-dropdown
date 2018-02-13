@@ -1,0 +1,8 @@
+<div class="btn-group" dropdown>
+  <button dropdownToggle type="button" class="btn btn-primary dropdown-toggle">
+    Button dropdown <span class="caret"></span>
+  </button>
+  <ul *dropdownMenu class="dropdown-menu" role="menu">
+    <li *ngFor="let movie of movies | async" role="menuitem"><a class="dropdown-item" href="#">{{movie}}</a></li>
+  </ul>
+</div>
