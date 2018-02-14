@@ -1,0 +1,34 @@
+.dropdown-toggle {
+    width: 100%;
+    min-width: 350px;
+    display: flex;
+    justify-content: space-between;
+    .dropdown-type {
+        float: left;
+        width: 50px;
+    }
+    .caret {
+        float: right;
+        top: 7px;
+        position: relative;
+    }
+    .dropdown-title {  
+        text-align: left;
+        width: 100%;
+        padding-left: 5px;
+    }
+}
+.dropdown-menu {
+    height: 180px;
+    overflow: scroll;
+    width: 100%;
+    min-width: 350px;
+    cursor: pointer;
+}
+.clear-section {
+    max-width: 350px;
+    .btn-clear {
+        border: none;
+        float: right;
+    }
+}

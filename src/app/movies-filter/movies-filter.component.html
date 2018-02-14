@@ -1,8 +1,13 @@
-<div class="btn-group" dropdown>
+<div class="btn-group" dropdown [isOpen]="status.isopen">
   <button dropdownToggle type="button" class="btn btn-primary dropdown-toggle">
-    Button dropdown <span class="caret"></span>
+    <span class="dropdown-type">Movie:</span>
+    <span class="dropdown-title" [innerHTML]="selectedMovie"></span>
+    <span class="caret"></span>
   </button>
   <ul *dropdownMenu class="dropdown-menu" role="menu">
-    <li *ngFor="let movie of movies | async" role="menuitem"><a class="dropdown-item" href="#">{{movie}}</a></li>
+    <li *ngFor="let movie of movies | async" role="menuitem"><a class="dropdown-item" (click)="select(movie)">{{movie.title}}</a></li>
   </ul>
+</div>
+<div class="clear-section">
+    <button class="btn-clear" *ngIf="status.selected" (click)="clear()">Clear</button>
 </div>

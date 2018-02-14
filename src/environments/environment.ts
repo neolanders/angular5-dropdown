@@ -5,6 +5,6 @@
 
 export const environment = {
   production: false,
-  api_url: 'https://developers.themoviedb.org/3/movies',
+  api_url: 'https://api.themoviedb.org/3/movie',
   api_key: '1c27e642d8cedef632716f85732ec043'
 };

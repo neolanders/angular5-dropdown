@@ -1,9 +1,8 @@
 import { Injectable } from '@angular/core';
 import { ApiService } from './api.service';
-import { Movie } from '../models/movie.model';
+import { Movie } from '../models/movie';
 import { Observable } from 'rxjs/Observable';
-import { map } from 'rxjs/operator/map';
-
+import { map } from 'rxjs/operators';
 
 @Injectable()
 export class MoviesService {
@@ -13,12 +12,10 @@ export class MoviesService {
   ) {}
 
     // Get popular movies list
-    getPopular(): Observable<any> {
+    getPopular(): Observable<Array<Movie>> {
       return this.apiService
-      .get('/popular');
-      // .pipe(map(data => {
-      //   return data.results;
-      // }));
+      .get('/popular')
+      .pipe(map(data => data.results));
     }
 
 }
