@@ -17,7 +17,7 @@ export class MoviesFilterComponent implements OnInit {
     isopen: false
   };
   movies: Observable<Array<Movie>>;
-  selectedMovie: string;
+  selectedMovieTitle: string;
 
   constructor(private movieService: MoviesService) { }
 
@@ -25,20 +25,14 @@ export class MoviesFilterComponent implements OnInit {
     this.movies = this.movieService.getPopular();
   }
 
-  toggleDropdown($event: MouseEvent): void {
-    $event.preventDefault();
-    $event.stopPropagation();
-    this.status.isopen = !this.status.isopen;
-  }
-
   select(movie: Movie): void {
-    this.selectedMovie = movie.title;
+    this.selectedMovieTitle = movie.title;
     this.status.selected = true;
     this.status.isopen = !this.status.isopen;
   }
 
   clear(): void {
-    this.selectedMovie = '';
+    this.selectedMovieTitle = '';
     this.status.selected = false;
   }
 }

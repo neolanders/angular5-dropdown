@@ -36,7 +36,7 @@ describe('AppComponent', () => {
 });
 
 
-// MoviesFilterComponent
+// MockMoviesFilterComponent
 @Component({
   selector: 'app-movies-filter',
   template: `<ng-content></ng-content>`
